@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0b3d91">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <title>Daily Sprint V2</title>
+</head>
+<body>
+    <div id="app">
+        <!-- Header displays coins, tickets, streak and daily missions summary -->
+        <header id="hud">
+            <div class="hud-section">
+                <span id="coin-display">🏅 0</span>
+                <span id="ticket-display">🎯 0</span>
+            </div>
+            <div class="hud-section" id="mission-summary">
+                <!-- Mission progress will be injected here -->
+            </div>
+            <div class="hud-section">
+                <span id="streak-display">Streak: 0</span>
+            </div>
+        </header>
+        <!-- Main canvas for the gauge-based sprint game -->
+        <canvas id="gameCanvas" width="360" height="640"></canvas>
+        <!-- Start screen shown before each run -->
+        <div id="startScreen" class="overlay">
+            <h1>Daily Sprint V2</h1>
+            <p id="daily-info">Today: --/--</p>
+            <p>Best Today: <span id="best-today">--</span>s | Best All-Time: <span id="best-all">--</span>s</p>
+            <button id="startButton" class="primary">Start Sprint</button>
+            <button id="customizeButton" class="secondary">Customize Trail</button>
+        </div>
+        <!-- Result screen shown after each run -->
+        <div id="resultScreen" class="overlay hidden">
+            <canvas id="resultCanvas" width="320" height="480"></canvas>
+            <div class="result-actions">
+                <button id="retryButton" class="primary">Retry</button>
+                <button id="saveButton" class="secondary">Save Image</button>
+            </div>
+        </div>
+        <!-- Cosmetic shop screen -->
+        <div id="cosmeticScreen" class="overlay hidden">
+            <h2>Customize Trail</h2>
+            <ul id="cosmetic-list"></ul>
+            <button id="closeCosmetic" class="secondary">Close</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
