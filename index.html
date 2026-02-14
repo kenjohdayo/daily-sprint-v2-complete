@@ -37,6 +37,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
+  <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
 
   <header class="site-header" id="top">
     <div class="container header-inner">
@@ -176,6 +177,18 @@
       </div>
     </section>
 
+    <section id="timeline" class="section">
+      <div class="container">
+        <h2>導入までの流れと目安</h2>
+        <ol class="timeline">
+          <li><strong>相談予約（当日〜3営業日）</strong><span>フォーム送信後に日程調整をご案内します。</span></li>
+          <li><strong>初回相談（30分）</strong><span>課題の全体像と最初に整える論点を明確化します。</span></li>
+          <li><strong>ご提案（3〜5営業日）</strong><span>支援範囲・頻度・期間・見積の内訳をご提示します。</span></li>
+          <li><strong>支援開始（最短翌週）</strong><span>定例運営と改善実装を伴走で開始します。</span></li>
+        </ol>
+      </div>
+    </section>
+
     <section id="pricing" class="section section-alt">
       <div class="container">
         <h2>料金の考え方</h2>
@@ -185,8 +198,7 @@
           <article class="card"><h3>月次伴走</h3><p>定例同席と改善運用を継続支援。</p><p class="price">目安: 月額30万〜80万円</p></article>
           <article class="card"><h3>横断プロジェクト支援</h3><p>複数部門の推進設計と定着化。</p><p class="price">目安: 個別見積</p></article>
         </div>
-      </div>
-            <div class="pricing-note card">
+        <div class="pricing-note card">
           <h3>費用を透明化するための約束</h3>
           <ul>
             <li>初回提案時に「対象範囲・頻度・期間」の内訳を明示</li>
@@ -236,6 +248,7 @@
       <div class="container cta-box">
         <h2>ご祈願相談フォーム</h2>
         <p>ブラウザ内で送信完了まで実行できます。必要項目をご入力ください。</p>
+        <ul class="contact-points"><li>原則2営業日以内に一次返信</li><li>初回相談前に論点候補を共有</li><li>無理な営業連絡は行いません</li></ul>
         <form id="contactForm" class="contact-form" novalidate data-endpoint="">
           <div class="grid-2 form-grid">
             <label>会社名
@@ -259,7 +272,7 @@
           </div>
           <label>課題の状況
             <textarea name="situation" rows="5" required maxlength="1200" placeholder="現状の困りごと・いつまでに整えたいかをご記入ください"></textarea>
-            <small class="hint">1200文字まで。箇条書きでも大丈夫です。</small>
+            <small class="hint">1200文字まで。箇条書きでも大丈夫です。<span id="charCount">0/1200</span></small>
           </label>
           <label class="honeypot" aria-hidden="true">Webサイト
             <input type="text" name="website" tabindex="-1" autocomplete="off" />
@@ -319,6 +332,11 @@
     });
 
     window.addEventListener('scroll', () => {
+      const scrollProgress = document.getElementById('scrollProgress');
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight > 0) {
+        scrollProgress.style.width = `${Math.min(100, (window.scrollY / docHeight) * 100)}%`;
+      }
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       if (maxScroll <= 0) return;
       const percent = Math.round((window.scrollY / maxScroll) * 100);
@@ -360,6 +378,13 @@
     });
 
     const form = document.getElementById('contactForm');
+    const situationField = form.querySelector('textarea[name="situation"]');
+    const charCount = document.getElementById('charCount');
+    function updateCharCount() {
+      charCount.textContent = `${situationField.value.length}/1200`;
+    }
+    updateCharCount();
+    situationField.addEventListener('input', updateCharCount);
     const submitBtn = document.getElementById('submitBtn');
     const formMessage = document.getElementById('formMessage');
 
