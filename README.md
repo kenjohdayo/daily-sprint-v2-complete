@@ -59,3 +59,5 @@ python3 -m http.server 4173 --bind 0.0.0.0
 - `index.html` の `#contactForm` に `data-endpoint` を設定すると、外部フォームAPIへ送信できます。
 - 料金セクションに「費用を透明化するための約束」を追記済み。
 - `#results` セクションで改善結果のサンプルを掲載し、信頼訴求を強化。
+
+- `#selfcheck` で診断チェックを提供し、自己認識→相談導線を強化。

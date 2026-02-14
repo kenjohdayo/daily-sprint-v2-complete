@@ -48,6 +48,7 @@
         <a href="#fit">対象</a>
         <a href="#services">支援メニュー</a>
         <a href="#pricing">料金</a>
+        <a href="#comparison">比較</a>
         <a href="#contact">相談</a>
         <a class="btn btn-small cta-track" data-cta="header" href="#contact">ご祈願相談</a>
       </nav>
@@ -209,6 +210,45 @@
       </div>
     </section>
 
+
+
+    <section id="comparison" class="section">
+      <div class="container">
+        <h2>神社型支援と一般的な支援の違い</h2>
+        <div class="comparison-wrap">
+          <table class="comparison-table">
+            <caption>支援スタイル比較（一般化した例）</caption>
+            <thead>
+              <tr><th scope="col">観点</th><th scope="col">一般的な支援</th><th scope="col">神社型支援</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">開始直後</th><td>資料設計から着手</td><td>運用の所作設計を先に実装</td></tr>
+              <tr><th scope="row">会議運営</th><td>議題中心で進行</td><td>判断基準と決定事項を固定化</td></tr>
+              <tr><th scope="row">成果物</th><td>提案資料が中心</td><td>継続運用できるテンプレート中心</td></tr>
+              <tr><th scope="row">支援終了後</th><td>引き継ぎで終了</td><td>自走チェックを実施して定着確認</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="selfcheck" class="section section-alt">
+      <div class="container">
+        <h2>無料診断セルフチェック（1分）</h2>
+        <p class="lead">当てはまる項目を選ぶと、課題の深さの目安を表示します。</p>
+        <div class="card">
+          <div class="checklist" id="selfChecklist">
+            <label><input type="checkbox" value="1" /> 会議の結論が次回持ち越しになることが多い</label>
+            <label><input type="checkbox" value="1" /> KPIの更新が担当者依存になっている</label>
+            <label><input type="checkbox" value="1" /> 部門間で優先順位の認識が揃わない</label>
+            <label><input type="checkbox" value="1" /> 改善施策が単発で終わりやすい</label>
+            <label><input type="checkbox" value="1" /> 誰が最終判断するか曖昧な場面がある</label>
+          </div>
+          <p id="checkResult" class="check-result">現在のチェック数: 0 / 5</p>
+        </div>
+      </div>
+    </section>
+
     <section id="profile" class="section">
       <div class="container">
         <h2>運営者プロフィール</h2>
@@ -282,6 +322,7 @@
             個人情報の取扱いに同意します（本フォーム送信のため）
           </label>
           <button type="submit" id="submitBtn" class="btn cta-track" data-cta="form-submit">送信する</button>
+          <p class="form-subnote">※ 営業目的のみの送信には返信しない場合があります。</p>
           <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -377,7 +418,18 @@
       });
     });
 
-    const form = document.getElementById('contactForm');
+    
+    const checklist = document.getElementById('selfChecklist');
+    const checkResult = document.getElementById('checkResult');
+    if (checklist) {
+      checklist.addEventListener('change', () => {
+        const count = checklist.querySelectorAll('input:checked').length;
+        checkResult.textContent = `現在のチェック数: ${count} / 5`;
+        if (count >= 4) checkResult.textContent += '（優先的に相談推奨）';
+      });
+    }
+
+const form = document.getElementById('contactForm');
     const situationField = form.querySelector('textarea[name="situation"]');
     const charCount = document.getElementById('charCount');
     function updateCharCount() {
@@ -388,6 +440,12 @@
     const submitBtn = document.getElementById('submitBtn');
     const formMessage = document.getElementById('formMessage');
 
+    const DRAFT_KEY = 'contactFormDraftV1';
+    const draft = JSON.parse(localStorage.getItem(DRAFT_KEY) || '{}');
+    ['company','name','email','topic','situation'].forEach((k)=>{
+      if (draft[k] && form.elements[k]) form.elements[k].value = draft[k];
+    });
+
     const requiredFields = form.querySelectorAll('[required]');
     requiredFields.forEach((field) => {
       field.addEventListener('invalid', () => {
@@ -395,6 +453,8 @@
       });
       field.addEventListener('input', () => {
         field.removeAttribute('aria-invalid');
+        const payload = Object.fromEntries(new FormData(form).entries());
+        localStorage.setItem(DRAFT_KEY, JSON.stringify(payload));
       });
     });
 
@@ -451,6 +511,7 @@
         }
 
         form.reset();
+        localStorage.removeItem(DRAFT_KEY);
         formMessage.textContent = '受付完了しました。担当より2営業日以内を目安にご連絡します。';
       } catch (err) {
         formMessage.textContent = '送信に失敗しました。時間をおいて再度お試しください。';
