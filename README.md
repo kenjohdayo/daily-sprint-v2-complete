@@ -1,4 +1,4 @@
-# Consulting LP (Static)
+# Consulting LP (Static, Shrine-inspired Theme)
 
 このリポジトリはビルド不要の静的LPです。`index.html` がルートページとして表示されます。
 

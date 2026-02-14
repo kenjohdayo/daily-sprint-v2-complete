@@ -1,12 +1,12 @@
 :root {
-  --color-bg: #f6f8fc;
+  --color-bg: #f8f4ec;
   --color-surface: #ffffff;
-  --color-text: #172033;
-  --color-muted: #4a5670;
-  --color-primary: #4a3dff;
-  --color-primary-dark: #2f249f;
-  --color-border: #dbe1f0;
-  --color-alt: #eef2ff;
+  --color-text: #2a1f17;
+  --color-muted: #5b4d40;
+  --color-primary: #b22222;
+  --color-primary-dark: #7f1d1d;
+  --color-border: #e8d8c0;
+  --color-alt: #fff7ed;
   --space-1: 8px;
   --space-2: 12px;
   --space-3: 16px;
@@ -105,6 +105,18 @@ a:focus-visible {
 }
 
 .hero { padding: 84px 0 56px; }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(45deg, rgba(178,34,34,0.04) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(178,34,34,0.04) 25%, transparent 25%);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+.hero { position: relative; overflow: hidden; }
+.hero > .container { position: relative; z-index: 1; }
+
 .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-5); }
 
 .eyebrow {
@@ -134,7 +146,7 @@ h1 { margin: 0 0 var(--space-3); font-size: clamp(2rem, 4.2vw, 3.3rem); line-hei
 }
 
 .hero-panel {
-  background: radial-gradient(circle at top left, #dcd8ff, #c7f3ff 65%);
+  background: radial-gradient(circle at top left, #fff1e2, #ffe4c7 65%);
   border-radius: var(--radius-lg);
   padding: 24px;
   box-shadow: var(--shadow);
@@ -224,7 +236,7 @@ h3 { margin: 0 0 var(--space-2); font-size: 1.1rem; }
 
 .cta-section { padding-top: 20px; }
 .cta-box {
-  background: linear-gradient(135deg, #1c2162, #4437e0);
+  background: linear-gradient(135deg, #7f1d1d, #b22222);
   color: #fff;
   border-radius: var(--radius-lg);
   padding: 36px;
@@ -236,7 +248,7 @@ h3 { margin: 0 0 var(--space-2); font-size: 1.1rem; }
   position: fixed;
   right: 16px;
   bottom: 16px;
-  background: #0f172a;
+  background: #7f1d1d;
   color: #fff;
   padding: 10px 14px;
   border-radius: 999px;
