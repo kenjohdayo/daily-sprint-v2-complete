@@ -87,6 +87,18 @@
       </div>
     </section>
 
+    <section class="section quick-trust" aria-label="即時判断ポイント">
+      <div class="container quick-trust-inner">
+        <p>まず確認したい方へ：</p>
+        <ul>
+          <li>最短翌週開始</li>
+          <li>費用内訳を事前明示</li>
+          <li>フォーム返信は2営業日以内</li>
+        </ul>
+        <a class="btn cta-track" data-cta="quick-trust" href="#contact">無料相談を予約する</a>
+      </div>
+    </section>
+
     <section id="fit" class="section section-alt">
       <div class="container">
         <h2>この支援の対象 / 非対象</h2>
@@ -274,6 +286,9 @@
     <section id="faq" class="section">
       <div class="container">
         <h2>よくあるご質問</h2>
+        <label class="faq-filter-label">質問を絞り込む
+          <input id="faqFilter" type="search" placeholder="例: 料金 / 期間 / オンライン" />
+        </label>
         <div class="faq-list">
           <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">相談前に準備しておくものはありますか？ <span aria-hidden="true" class="faq-icon">＋</span></button><div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden><p>現状の課題感と、直近で困っている場面を簡単に整理いただければ十分です。</p></div></div>
           <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">小規模なテーマでも依頼できますか？ <span aria-hidden="true" class="faq-icon">＋</span></button><div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden><p>はい。短期間の課題整理や、特定プロセスの改善支援にも対応可能です。</p></div></div>
@@ -290,6 +305,7 @@
         <p>ブラウザ内で送信完了まで実行できます。必要項目をご入力ください。</p>
         <ul class="contact-points"><li>原則2営業日以内に一次返信</li><li>初回相談前に論点候補を共有</li><li>無理な営業連絡は行いません</li></ul>
         <form id="contactForm" class="contact-form" novalidate data-endpoint="">
+          <p class="form-subnote">※ 本番では `data-endpoint` にFormspree/GetformのURLを設定可能です。</p>
           <div class="grid-2 form-grid">
             <label>会社名
               <input type="text" name="company" required autocomplete="organization" />
@@ -330,6 +346,8 @@
   </main>
 
   <a class="floating-cta cta-track" data-cta="floating" href="#contact" aria-label="ご祈願相談へ移動">ご祈願相談</a>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="ページ上部へ戻る">↑ 上へ</button>
 
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -429,6 +447,27 @@
       });
     }
 
+
+    const faqFilter = document.getElementById('faqFilter');
+    if (faqFilter) {
+      faqFilter.addEventListener('input', () => {
+        const q = faqFilter.value.trim().toLowerCase();
+        document.querySelectorAll('.faq-item').forEach((item) => {
+          const text = item.textContent.toLowerCase();
+          item.style.display = text.includes(q) ? '' : 'none';
+        });
+      });
+    }
+
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('is-visible', window.scrollY > 600);
+    }, { passive: true });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      trackEvent('cta_click', { location: 'back_to_top' });
+    });
+
 const form = document.getElementById('contactForm');
     const situationField = form.querySelector('textarea[name="situation"]');
     const charCount = document.getElementById('charCount');
@@ -512,7 +551,8 @@ const form = document.getElementById('contactForm');
 
         form.reset();
         localStorage.removeItem(DRAFT_KEY);
-        formMessage.textContent = '受付完了しました。担当より2営業日以内を目安にご連絡します。';
+        const ticket = `JIN-${Date.now().toString().slice(-6)}`;
+        formMessage.textContent = `受付完了しました（受付番号: ${ticket}）。担当より2営業日以内を目安にご連絡します。`;
       } catch (err) {
         formMessage.textContent = '送信に失敗しました。時間をおいて再度お試しください。';
       } finally {
