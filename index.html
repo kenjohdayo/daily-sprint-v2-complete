@@ -10,7 +10,18 @@
   <meta property="og:description" content="課題整理から実行支援まで。成果につながる変化を、現場と一緒に作ります。" />
   <meta property="og:url" content="/" />
   <meta property="og:site_name" content="North Grid Consulting" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "North Grid Consulting",
+      "description": "戦略から実行定着まで伴走するコンサルティングサービス",
+      "areaServed": "Japan",
+      "url": "/"
+    }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
@@ -41,6 +52,11 @@
             <a class="btn" href="#contact">まずは相談する</a>
             <a class="btn btn-ghost" href="#services">支援内容を見る</a>
           </div>
+          <ul class="hero-trust" aria-label="強みの要約">
+            <li>最短2週間で初期改善を開始</li>
+            <li>意思決定会議の運営設計まで支援</li>
+            <li>成果物テンプレートを標準提供</li>
+          </ul>
         </div>
         <div class="hero-panel" aria-hidden="true">
           <p>対象例</p>
@@ -53,22 +69,21 @@
       </div>
     </section>
 
+    <section class="section metrics" aria-label="支援の特徴">
+      <div class="container metrics-grid">
+        <article><strong>短サイクル設計</strong><span>小さく試し、早く改善する実行プロセス。</span></article>
+        <article><strong>合意形成重視</strong><span>関係者の視点差を埋めるファシリテーション。</span></article>
+        <article><strong>運用定着まで伴走</strong><span>属人化しない仕組みに落とし込みます。</span></article>
+      </div>
+    </section>
+
     <section id="issues" class="section">
       <div class="container">
         <h2>よくある課題と、解決の方向性</h2>
         <div class="grid-3">
-          <article class="card">
-            <h3>課題が広く、優先順位が決められない</h3>
-            <p>論点を分解し、効果と実行難易度で整理。最初に着手すべきテーマを明確にします。</p>
-          </article>
-          <article class="card">
-            <h3>計画はあるが、実装段階で止まる</h3>
-            <p>担当・期限・判断基準を具体化し、会議体と運用フローまで設計します。</p>
-          </article>
-          <article class="card">
-            <h3>成果の測定方法が統一されていない</h3>
-            <p>指標定義とレビュー手順を揃え、改善の意思決定を速くする状態を作ります。</p>
-          </article>
+          <article class="card"><h3>課題が広く、優先順位が決められない</h3><p>論点を分解し、効果と実行難易度で整理。最初に着手すべきテーマを明確にします。</p></article>
+          <article class="card"><h3>計画はあるが、実装段階で止まる</h3><p>担当・期限・判断基準を具体化し、会議体と運用フローまで設計します。</p></article>
+          <article class="card"><h3>成果の測定方法が統一されていない</h3><p>指標定義とレビュー手順を揃え、改善の意思決定を速くする状態を作ります。</p></article>
         </div>
       </div>
     </section>
@@ -77,22 +92,10 @@
       <div class="container">
         <h2>支援メニュー</h2>
         <div class="grid-4">
-          <article class="card">
-            <h3>戦略設計支援</h3>
-            <p>事業テーマの整理、重点施策の選定、実行計画の構造化を支援します。</p>
-          </article>
-          <article class="card">
-            <h3>業務改善支援</h3>
-            <p>業務プロセス可視化、ボトルネック分析、運用ルール再設計を行います。</p>
-          </article>
-          <article class="card">
-            <h3>実行推進支援</h3>
-            <p>プロジェクト推進、関係者調整、定例運営を通じて進捗を前進させます。</p>
-          </article>
-          <article class="card">
-            <h3>定着・内製化支援</h3>
-            <p>ナレッジ化、テンプレート整備、レビュー体制構築で継続運用を支えます。</p>
-          </article>
+          <article class="card"><h3>戦略設計支援</h3><p>事業テーマの整理、重点施策の選定、実行計画の構造化を支援します。</p></article>
+          <article class="card"><h3>業務改善支援</h3><p>業務プロセス可視化、ボトルネック分析、運用ルール再設計を行います。</p></article>
+          <article class="card"><h3>実行推進支援</h3><p>プロジェクト推進、関係者調整、定例運営を通じて進捗を前進させます。</p></article>
+          <article class="card"><h3>定着・内製化支援</h3><p>ナレッジ化、テンプレート整備、レビュー体制構築で継続運用を支えます。</p></article>
         </div>
       </div>
     </section>
@@ -126,45 +129,32 @@
       <div class="container">
         <h2>実績・事例（一般化サンプル）</h2>
         <div class="grid-3">
-          <article class="case-card">
-            <p class="case-meta">製造業 × 意思決定遅延</p>
-            <h3>部門横断プロジェクトの推進体制を再設計</h3>
-            <p>会議設計と判断基準を明文化。進捗共有のリズムが整い、施策の停滞が減少。</p>
-          </article>
-          <article class="case-card">
-            <p class="case-meta">サービス業 × 業務負荷増大</p>
-            <h3>運用ルールと担当分担を再構築</h3>
-            <p>業務フローを整理し、引き継ぎ品質を標準化。現場の属人化リスクを低減。</p>
-          </article>
-          <article class="case-card">
-            <p class="case-meta">IT企業 × 施策検証不足</p>
-            <h3>指標設計とレビュー運営を導入</h3>
-            <p>評価指標の定義を統一。改善サイクルが短くなり、意思決定の精度が向上。</p>
-          </article>
+          <article class="case-card"><p class="case-meta">製造業 × 意思決定遅延</p><h3>部門横断プロジェクトの推進体制を再設計</h3><p>会議設計と判断基準を明文化。進捗共有のリズムが整い、施策の停滞が減少。</p></article>
+          <article class="case-card"><p class="case-meta">サービス業 × 業務負荷増大</p><h3>運用ルールと担当分担を再構築</h3><p>業務フローを整理し、引き継ぎ品質を標準化。現場の属人化リスクを低減。</p></article>
+          <article class="case-card"><p class="case-meta">IT企業 × 施策検証不足</p><h3>指標設計とレビュー運営を導入</h3><p>評価指標の定義を統一。改善サイクルが短くなり、意思決定の精度が向上。</p></article>
         </div>
       </div>
     </section>
 
-    <section id="reasons" class="section section-alt">
+    <section class="section section-alt" aria-label="クライアントコメント">
+      <div class="container">
+        <h2>ご相談後の変化（定性的コメント）</h2>
+        <div class="grid-3 testimonials">
+          <blockquote class="card"><p>「議論が空中戦にならず、次に何を決めるかが明確になった。」</p><cite>事業責任者</cite></blockquote>
+          <blockquote class="card"><p>「運用ルールが整い、チームの引き継ぎがスムーズになった。」</p><cite>部門マネージャー</cite></blockquote>
+          <blockquote class="card"><p>「施策評価の基準が揃い、改善の意思決定が早くなった。」</p><cite>プロジェクト推進担当</cite></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="reasons" class="section">
       <div class="container">
         <h2>選ばれる理由</h2>
         <div class="grid-2">
-          <article class="reason">
-            <h3>実行起点の設計</h3>
-            <p>提案書で終わらせず、現場で動く運用単位まで落とし込みます。</p>
-          </article>
-          <article class="reason">
-            <h3>スピードと品質の両立</h3>
-            <p>短い検証サイクルで進めつつ、判断に必要な情報は過不足なく整えます。</p>
-          </article>
-          <article class="reason">
-            <h3>伴走型のコミュニケーション</h3>
-            <p>関係者の合意形成を重視し、継続可能な体制づくりまで支援します。</p>
-          </article>
-          <article class="reason">
-            <h3>再利用できる成果物</h3>
-            <p>テンプレートや手順を残し、次回以降の取り組みに活かせる状態を作ります。</p>
-          </article>
+          <article class="reason"><h3>実行起点の設計</h3><p>提案書で終わらせず、現場で動く運用単位まで落とし込みます。</p></article>
+          <article class="reason"><h3>スピードと品質の両立</h3><p>短い検証サイクルで進めつつ、判断に必要な情報は過不足なく整えます。</p></article>
+          <article class="reason"><h3>伴走型のコミュニケーション</h3><p>関係者の合意形成を重視し、継続可能な体制づくりまで支援します。</p></article>
+          <article class="reason"><h3>再利用できる成果物</h3><p>テンプレートや手順を残し、次回以降の取り組みに活かせる状態を作ります。</p></article>
         </div>
       </div>
     </section>
@@ -173,30 +163,12 @@
       <div class="container">
         <h2>FAQ</h2>
         <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">相談前に準備しておくものはありますか？</button>
-            <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden><p>現状の課題感と、直近で困っている場面を簡単に整理いただければ十分です。</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">小規模なテーマでも依頼できますか？</button>
-            <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden><p>はい。短期間の課題整理や、特定プロセスの改善支援にも対応可能です。</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">オンラインのみでも対応できますか？</button>
-            <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden><p>オンライン中心でも進行できます。必要に応じて対面も組み合わせます。</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">契約期間の目安はどれくらいですか？</button>
-            <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden><p>課題の範囲により異なります。初回相談で目的と期間の目安を一緒に定義します。</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">社内に専門担当がいなくても進められますか？</button>
-            <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden><p>問題ありません。必要な役割を整理し、実務に合わせた進行方法をご提案します。</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">料金体系はどうなりますか？</button>
-            <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden><p>課題の難易度と支援範囲を確認し、固定/段階型のいずれかでご案内します。</p></div>
-          </div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">相談前に準備しておくものはありますか？</button><div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden><p>現状の課題感と、直近で困っている場面を簡単に整理いただければ十分です。</p></div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">小規模なテーマでも依頼できますか？</button><div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden><p>はい。短期間の課題整理や、特定プロセスの改善支援にも対応可能です。</p></div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">オンラインのみでも対応できますか？</button><div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden><p>オンライン中心でも進行できます。必要に応じて対面も組み合わせます。</p></div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">契約期間の目安はどれくらいですか？</button><div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden><p>課題の範囲により異なります。初回相談で目的と期間の目安を一緒に定義します。</p></div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">社内に専門担当がいなくても進められますか？</button><div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden><p>問題ありません。必要な役割を整理し、実務に合わせた進行方法をご提案します。</p></div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">料金体系はどうなりますか？</button><div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden><p>課題の難易度と支援範囲を確認し、固定/段階型のいずれかでご案内します。</p></div></div>
         </div>
       </div>
     </section>
@@ -209,6 +181,8 @@
       </div>
     </section>
   </main>
+
+  <a class="floating-cta" href="#contact" aria-label="無料相談へ移動">無料相談</a>
 
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -229,6 +203,13 @@
       const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
       menuToggle.setAttribute('aria-expanded', String(!expanded));
       primaryNav.classList.toggle('is-open');
+    });
+
+    primaryNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        primaryNav.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
     });
 
     document.querySelectorAll('.faq-question').forEach((button) => {
