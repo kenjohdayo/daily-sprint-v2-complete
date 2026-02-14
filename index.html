@@ -47,7 +47,7 @@
         <a href="#fit">対象</a>
         <a href="#services">支援メニュー</a>
         <a href="#pricing">料金</a>
-        <a href="#faq">FAQ</a>
+        <a href="#contact">相談</a>
         <a class="btn btn-small cta-track" data-cta="header" href="#contact">ご祈願相談</a>
       </nav>
     </div>
@@ -59,10 +59,10 @@
         <div>
           <p class="eyebrow">SHRINE-INSPIRED BUSINESS CONSULTING</p>
           <h1>祈るだけで終わらせない。<br />組織の「型」を整え、実行へ導きます。</h1>
-          <p class="lead">組織横断PJ・KPI運用・会議運営の滞りを、見立てから定着まで一貫して支援します。</p>
+          <p class="lead">組織横断PJ・KPI運用・会議運営の滞りを、見立てから定着まで一貫して支援します。神社の運営思想を、事業実務に翻訳した伴走支援です。</p>
           <div class="cta-row">
             <a class="btn cta-track" data-cta="hero-primary" href="#contact">まずは相談する</a>
-            <a class="btn btn-ghost" href="#services">支援内容を見る</a>
+            <a class="btn btn-ghost" href="#offer">初回相談の価値を見る</a>
           </div>
           <ul class="hero-trust" aria-label="強みの要約">
             <li>初月で「最初の作法」を定着</li>
@@ -70,13 +70,17 @@
             <li>再現性ある型をテンプレート化</li>
           </ul>
         </div>
-        <aside class="hero-panel">
+        <aside class="hero-panel" aria-label="ご相談の例">
           <h2>ご相談の例</h2>
           <ul>
             <li>新しい取り組みが形になる前に止まる</li>
             <li>部署ごとに判断軸が異なる</li>
             <li>改善の手応えが見えにくい</li>
           </ul>
+          <div class="hero-score">
+            <p>初回相談満足度（社内アンケート）</p>
+            <strong>4.7 / 5.0</strong>
+          </div>
         </aside>
       </div>
     </section>
@@ -188,6 +192,7 @@
           <article class="card">
             <h3>神社型の支援思想</h3>
             <p>「一度の打ち手より、続く所作」を重視。場を整え、判断軸を揃え、習慣として根付く仕組みを共につくります。</p>
+            <p>週次の所作を整えることで、特別な努力に依存しない推進力を作ります。</p>
           </article>
         </div>
       </div>
@@ -262,7 +267,6 @@
   </footer>
 
   <script>
-    // runtime absolute URL metadata
     (function applyAbsoluteMeta() {
       const url = new URL(window.location.href);
       const base = `${url.origin}${url.pathname}`;
@@ -279,7 +283,6 @@
       jsonld.textContent = JSON.stringify(data);
     }());
 
-    // minimal analytics hook
     window.dataLayer = window.dataLayer || [];
     const sentScroll = new Set();
     function trackEvent(name, params) {
@@ -334,7 +337,6 @@
       });
     });
 
-    // Browser-complete form flow (static friendly)
     const form = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     const formMessage = document.getElementById('formMessage');

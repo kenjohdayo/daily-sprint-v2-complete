@@ -25,6 +25,13 @@ python3 -m http.server 4173 --bind 0.0.0.0
 - スパム対策として honeypot (`name="website"`) を実装しています。
 - 本番で外部送信に切り替える場合は、`index.html` の `contactForm` submit 処理を Formspree/Getform の POST に置換してください。
 
+### Formspree切替メモ（推奨）
+
+1. Formspreeでフォームを作成し、エンドポイントURLを取得
+2. `index.html` の submit ハンドラ内 `localStorage` 保存部分を `fetch` POST に置換
+3. 成功時 `formMessage` へ完了文言、失敗時は再送ガイドを表示
+4. `trackEvent('form_submit_complete')` は維持
+
 ## 計測イベント
 
 `window.dataLayer` へ以下を push します（未設定時は console 出力のみ）。
