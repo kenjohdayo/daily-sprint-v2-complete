@@ -3,23 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>神社型コンサルティング | 事業の軸を整える伴走支援</title>
-  <meta name="description" content="神社的な所作をヒントに、方針整理から実行定着まで伴走するコンサルティングLP。場づくり・意思決定・運用改善を支援します。" />
+  <title>神社型コンサルティング | 組織の意思決定と実行を整える</title>
+  <meta name="description" content="組織横断プロジェクト・KPI運用・会議設計の滞りを、神社型の所作で整える伴走型コンサルティング。" />
+  <link rel="canonical" href="https://localhost/" id="canonicalLink" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="神社型コンサルティング | 事業の軸を整える伴走支援" />
-  <meta property="og:description" content="場を整え、型をつくり、日々の運用に根付かせる支援を行います。" />
-  <meta property="og:url" content="/" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:title" content="神社型コンサルティング | 組織の意思決定と実行を整える" />
+  <meta property="og:description" content="場を整え、型をつくり、運用に根付かせる支援を提供します。" />
+  <meta property="og:url" content="https://localhost/" id="ogUrl" />
+  <meta property="og:image" content="https://localhost/assets/ogp-shrine-consulting.svg" id="ogImage" />
   <meta property="og:site_name" content="鎮守ビジネスコンサルティング" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="神社型コンサルティング | 組織の意思決定と実行を整える" />
+  <meta name="twitter:description" content="組織運営の滞りを、見立て・型づくり・実践・定着の四段で伴走します。" />
+  <meta name="twitter:image" content="https://localhost/assets/ogp-shrine-consulting.svg" id="twitterImage" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
-  <script type="application/ld+json">
+  <script id="jsonld" type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "鎮守ビジネスコンサルティング",
-      "description": "戦略から実行定着まで伴走するコンサルティングサービス",
-      "areaServed": "Japan",
-      "url": "/"
+      "url": "https://localhost/",
+      "areaServed": "JP",
+      "sameAs": [],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "availableLanguage": ["ja"]
+      }]
     }
   </script>
 </head>
@@ -32,11 +44,11 @@
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="primaryNav">メニュー</button>
       <nav id="primaryNav" class="nav" aria-label="主要ナビゲーション">
         <a href="#issues">課題</a>
-        <a href="#services">ご支援のメニュー</a>
-        <a href="#process">進め方</a>
-        <a href="#cases">事例</a>
-        <a href="#faq">よくあるご質問</a>
-        <a class="btn btn-small" href="#contact">ご祈願相談</a>
+        <a href="#fit">対象</a>
+        <a href="#services">支援メニュー</a>
+        <a href="#pricing">料金</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-small cta-track" data-cta="header" href="#contact">ご祈願相談</a>
       </nav>
     </div>
   </header>
@@ -46,10 +58,10 @@
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">SHRINE-INSPIRED BUSINESS CONSULTING</p>
-          <h1>祈るだけで終わらせない。<br />事業の「型」を整え、実行へ導きます。</h1>
-          <p class="lead">神社運営のように、日々の積み重ねを重視。方針の言語化、役割の明確化、運用の習慣化まで丁寧に伴走します。</p>
+          <h1>祈るだけで終わらせない。<br />組織の「型」を整え、実行へ導きます。</h1>
+          <p class="lead">組織横断PJ・KPI運用・会議運営の滞りを、見立てから定着まで一貫して支援します。</p>
           <div class="cta-row">
-            <a class="btn" href="#contact">まずは相談する</a>
+            <a class="btn cta-track" data-cta="hero-primary" href="#contact">まずは相談する</a>
             <a class="btn btn-ghost" href="#services">支援内容を見る</a>
           </div>
           <ul class="hero-trust" aria-label="強みの要約">
@@ -58,13 +70,37 @@
             <li>再現性ある型をテンプレート化</li>
           </ul>
         </div>
-        <div class="hero-panel" aria-hidden="true">
-          <p>ご相談の例</p>
+        <aside class="hero-panel">
+          <h2>ご相談の例</h2>
           <ul>
             <li>新しい取り組みが形になる前に止まる</li>
             <li>部署ごとに判断軸が異なる</li>
             <li>改善の手応えが見えにくい</li>
           </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="fit" class="section section-alt">
+      <div class="container">
+        <h2>この支援の対象 / 非対象</h2>
+        <div class="grid-2 fit-grid">
+          <article class="card">
+            <h3>対象</h3>
+            <ul>
+              <li>組織横断プロジェクトが前に進まない</li>
+              <li>KPI会議で意思決定が止まる</li>
+              <li>運用が属人化し、継続できない</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>非対象</h3>
+            <ul>
+              <li>制作作業だけを外注したい</li>
+              <li>関係者調整を伴わない単発依頼</li>
+              <li>丸投げ前提で社内関与が難しい案件</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -100,61 +136,59 @@
       </div>
     </section>
 
-    <section id="process" class="section">
+    <section id="offer" class="section">
       <div class="container">
-        <h2>進め方（四つの段）</h2>
-        <ol class="steps">
-          <li><strong>一、見立て</strong><span>現状把握と課題仮説の設定。関係者の認識差を可視化します。</span></li>
-          <li><strong>二、型づくり</strong><span>優先順位を決め、実行可能なロードマップを策定します。</span></li>
-          <li><strong>三、実践</strong><span>施策を小さく開始し、データと現場の声で改善を重ねます。</span></li>
-          <li><strong>四、定着</strong><span>定着に向けて運用を仕組み化し、次の成長テーマを定義します。</span></li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="deliverables" class="section section-alt">
-      <div class="container">
-        <h2>主な納品物（型の例）</h2>
-        <ul class="deliverables">
-          <li>課題整理レポート / 論点マップ</li>
-          <li>実行ロードマップ / 優先順位表</li>
-          <li>業務フロー図 / 役割分担表</li>
-          <li>会議運営テンプレート / KPIレビュー資料</li>
-          <li>定着化ガイド / 内製化トレーニング資料</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="cases" class="section">
-      <div class="container">
-        <h2>ご支援事例（一般化サンプル）</h2>
-        <div class="grid-3">
-          <article class="case-card"><p class="case-meta">製造業 × 意思決定遅延</p><h3>部門横断プロジェクトの推進体制を再設計</h3><p>会議設計と判断基準を明文化。進捗共有のリズムが整い、施策の停滞が減少。</p></article>
-          <article class="case-card"><p class="case-meta">サービス業 × 業務負荷増大</p><h3>運用ルールと担当分担を再構築</h3><p>業務フローを整理し、引き継ぎ品質を標準化。現場の属人化リスクを低減。</p></article>
-          <article class="case-card"><p class="case-meta">IT企業 × 施策検証不足</p><h3>指標設計とレビュー運営を導入</h3><p>評価指標の定義を統一。改善サイクルが短くなり、意思決定の精度が向上。</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" aria-label="クライアントコメント">
-      <div class="container">
-        <h2>伴走後の変化（定性的コメント）</h2>
-        <div class="grid-3 testimonials">
-          <blockquote class="card"><p>「議論が空中戦にならず、次に何を決めるかが明確になった。」</p><cite>事業責任者</cite></blockquote>
-          <blockquote class="card"><p>「運用ルールが整い、チームの引き継ぎがスムーズになった。」</p><cite>部門マネージャー</cite></blockquote>
-          <blockquote class="card"><p>「施策評価の基準が揃い、改善の意思決定が早くなった。」</p><cite>プロジェクト推進担当</cite></blockquote>
-        </div>
-      </div>
-    </section>
-
-    <section id="reasons" class="section">
-      <div class="container">
-        <h2>選ばれる理由（神社型の支援思想）</h2>
+        <h2>初回相談で得られるもの</h2>
         <div class="grid-2">
-          <article class="reason"><h3>実行起点の設計</h3><p>提案書で終わらせず、現場で動く運用単位まで落とし込みます。</p></article>
-          <article class="reason"><h3>スピードと品質の両立</h3><p>短い検証サイクルで進めつつ、判断に必要な情報は過不足なく整えます。</p></article>
-          <article class="reason"><h3>伴走型のコミュニケーション</h3><p>関係者の合意形成を重視し、継続可能な体制づくりまで支援します。</p></article>
-          <article class="reason"><h3>再利用できる成果物</h3><p>テンプレートや手順を残し、次回以降の取り組みに活かせる状態を作ります。</p></article>
+          <article class="card">
+            <h3>持ち帰りアウトプット</h3>
+            <ul>
+              <li>現状診断の論点マップ</li>
+              <li>優先順位の仮説（短期/中期）</li>
+              <li>次の1週間で着手する最小アクション</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>当日の進行アジェンダ（30分）</h3>
+            <ol>
+              <li>現状の滞り確認（10分）</li>
+              <li>要因の見立て整理（10分）</li>
+              <li>次アクションの合意（10分）</li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section section-alt">
+      <div class="container">
+        <h2>料金の考え方</h2>
+        <p class="lead">費用は次の3要素で決まります：<strong>支援期間 / 関与頻度 / 対象範囲</strong></p>
+        <div class="grid-3">
+          <article class="card"><h3>スポット整理</h3><p>課題整理と初期設計を短期間で実施。</p><p class="price">目安: 15万〜40万円</p></article>
+          <article class="card"><h3>月次伴走</h3><p>定例同席と改善運用を継続支援。</p><p class="price">目安: 月額30万〜80万円</p></article>
+          <article class="card"><h3>横断プロジェクト支援</h3><p>複数部門の推進設計と定着化。</p><p class="price">目安: 個別見積</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="profile" class="section">
+      <div class="container">
+        <h2>運営者プロフィール</h2>
+        <div class="grid-2">
+          <article class="card">
+            <h3>代表コンサルタント</h3>
+            <p>事業企画・業務改革・PMOの実務を横断して支援。組織の意思決定と実行運用をつなぐ設計を専門としています。</p>
+            <ul>
+              <li>得意領域: 組織横断PJ、KPI運用、会議体設計</li>
+              <li>支援規模: 中小〜中堅企業の現場改善</li>
+              <li>成果の方向性: 意思決定速度向上、属人化低減、改善定着</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>神社型の支援思想</h3>
+            <p>「一度の打ち手より、続く所作」を重視。場を整え、判断軸を揃え、習慣として根付く仕組みを共につくります。</p>
+          </article>
         </div>
       </div>
     </section>
@@ -163,39 +197,114 @@
       <div class="container">
         <h2>よくあるご質問</h2>
         <div class="faq-list">
-          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">相談前に準備しておくものはありますか？</button><div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden><p>現状の課題感と、直近で困っている場面を簡単に整理いただければ十分です。</p></div></div>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">小規模なテーマでも依頼できますか？</button><div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden><p>はい。短期間の課題整理や、特定プロセスの改善支援にも対応可能です。</p></div></div>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">オンラインのみでも対応できますか？</button><div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden><p>オンライン中心でも進行できます。必要に応じて対面も組み合わせます。</p></div></div>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">契約期間の目安はどれくらいですか？</button><div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden><p>課題の範囲により異なります。初回相談で目的と期間の目安を一緒に定義します。</p></div></div>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">社内に専門担当がいなくても進められますか？</button><div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden><p>問題ありません。必要な役割を整理し、実務に合わせた進行方法をご提案します。</p></div></div>
-          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">料金体系はどうなりますか？</button><div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden><p>課題の難易度と支援範囲を確認し、固定/段階型のいずれかでご案内します。</p></div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">相談前に準備しておくものはありますか？ <span aria-hidden="true" class="faq-icon">＋</span></button><div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden><p>現状の課題感と、直近で困っている場面を簡単に整理いただければ十分です。</p></div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">小規模なテーマでも依頼できますか？ <span aria-hidden="true" class="faq-icon">＋</span></button><div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden><p>はい。短期間の課題整理や、特定プロセスの改善支援にも対応可能です。</p></div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">オンラインのみでも対応できますか？ <span aria-hidden="true" class="faq-icon">＋</span></button><div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden><p>オンライン中心でも進行できます。必要に応じて対面も組み合わせます。</p></div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">契約期間の目安はどれくらいですか？ <span aria-hidden="true" class="faq-icon">＋</span></button><div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden><p>課題の範囲により異なります。初回相談で目的と期間の目安を一緒に定義します。</p></div></div>
+          <div class="faq-item"><button class="faq-question" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">社内に専門担当がいなくても進められますか？ <span aria-hidden="true" class="faq-icon">＋</span></button><div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden><p>問題ありません。必要な役割を整理し、実務に合わせた進行方法をご提案します。</p></div></div>
         </div>
       </div>
     </section>
 
     <section id="contact" class="section cta-section">
       <div class="container cta-box">
-        <h2>まずは現状の「お祓い」から。</h2>
-        <p>30分の初回相談で、滞りの原因と最初に整える論点を一緒に見立てます。</p>
-        <a class="btn" href="mailto:contact@example.com?subject=%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">メールで問い合わせる</a>
+        <h2>ご祈願相談フォーム</h2>
+        <p>ブラウザ内で送信完了まで実行できます。必要項目をご入力ください。</p>
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="grid-2 form-grid">
+            <label>会社名
+              <input type="text" name="company" required autocomplete="organization" />
+            </label>
+            <label>氏名
+              <input type="text" name="name" required autocomplete="name" />
+            </label>
+            <label>メール
+              <input type="email" name="email" required autocomplete="email" />
+            </label>
+            <label>相談テーマ
+              <select name="topic" required>
+                <option value="">選択してください</option>
+                <option>組織横断プロジェクト</option>
+                <option>KPI運用改善</option>
+                <option>会議体再設計</option>
+                <option>業務改善・定着支援</option>
+              </select>
+            </label>
+          </div>
+          <label>課題の状況
+            <textarea name="situation" rows="5" required></textarea>
+          </label>
+          <label class="honeypot" aria-hidden="true">Webサイト
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+          </label>
+          <label class="agree">
+            <input type="checkbox" name="agree" required />
+            個人情報の取扱いに同意します
+          </label>
+          <button type="submit" id="submitBtn" class="btn cta-track" data-cta="form-submit">送信する</button>
+          <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>
 
-  <a class="floating-cta" href="#contact" aria-label="ご祈願相談へ移動">ご祈願相談</a>
+  <a class="floating-cta cta-track" data-cta="floating" href="#contact" aria-label="ご祈願相談へ移動">ご祈願相談</a>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© 鎮守ビジネスコンサルティング</p>
       <div class="footer-links">
         <a href="#top">トップ</a>
-        <a href="#services">ご支援のメニュー</a>
+        <a href="#services">支援メニュー</a>
         <a href="#contact">問い合わせ</a>
       </div>
     </div>
   </footer>
 
   <script>
+    // runtime absolute URL metadata
+    (function applyAbsoluteMeta() {
+      const url = new URL(window.location.href);
+      const base = `${url.origin}${url.pathname}`;
+      document.getElementById('canonicalLink').setAttribute('href', base);
+      document.getElementById('ogUrl').setAttribute('content', base);
+      const ogImageAbs = `${url.origin}/assets/ogp-shrine-consulting.svg`;
+      document.getElementById('ogImage').setAttribute('content', ogImageAbs);
+      document.getElementById('twitterImage').setAttribute('content', ogImageAbs);
+
+      const jsonld = document.getElementById('jsonld');
+      const data = JSON.parse(jsonld.textContent);
+      data.url = base;
+      data.sameAs = [base];
+      jsonld.textContent = JSON.stringify(data);
+    }());
+
+    // minimal analytics hook
+    window.dataLayer = window.dataLayer || [];
+    const sentScroll = new Set();
+    function trackEvent(name, params) {
+      window.dataLayer.push({ event: name, ...params });
+      console.log('[track]', name, params || {});
+    }
+
+    document.querySelectorAll('.cta-track').forEach((el) => {
+      el.addEventListener('click', () => {
+        trackEvent('cta_click', { location: el.dataset.cta || 'unknown' });
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (maxScroll <= 0) return;
+      const percent = Math.round((window.scrollY / maxScroll) * 100);
+      [50, 75].forEach((threshold) => {
+        if (percent >= threshold && !sentScroll.has(threshold)) {
+          sentScroll.add(threshold);
+          trackEvent('scroll_depth', { percent: threshold });
+        }
+      });
+    }, { passive: true });
+
     const menuToggle = document.getElementById('menuToggle');
     const primaryNav = document.getElementById('primaryNav');
 
@@ -220,7 +329,52 @@
 
         button.setAttribute('aria-expanded', String(!expanded));
         answer.hidden = expanded;
+        const icon = button.querySelector('.faq-icon');
+        if (icon) icon.textContent = expanded ? '＋' : '−';
       });
+    });
+
+    // Browser-complete form flow (static friendly)
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formMessage = document.getElementById('formMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formMessage.textContent = '';
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        formMessage.textContent = '未入力または入力形式に誤りがあります。';
+        return;
+      }
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      if (String(data.website || '').trim() !== '') {
+        formMessage.textContent = '送信を受け付けました。';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中...';
+
+      await new Promise((r) => setTimeout(r, 800));
+      const inbox = JSON.parse(localStorage.getItem('contactInbox') || '[]');
+      inbox.push({
+        company: data.company,
+        name: data.name,
+        email: data.email,
+        topic: data.topic,
+        situation: data.situation,
+        at: new Date().toISOString()
+      });
+      localStorage.setItem('contactInbox', JSON.stringify(inbox));
+
+      form.reset();
+      formMessage.textContent = '受付完了しました。担当より2営業日以内を目安にご連絡します。';
+      submitBtn.disabled = false;
+      submitBtn.textContent = '送信する';
+      trackEvent('form_submit_complete', { method: 'browser_storage' });
     });
   </script>
 </body>

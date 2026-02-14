@@ -1,6 +1,6 @@
 # Consulting LP (Static, Shrine-inspired Theme)
 
-このリポジトリはビルド不要の静的LPです。`index.html` がルートページとして表示されます。
+ビルド不要の静的LPです。`index.html` がルートページとして表示されます。
 
 ## ローカル確認
 
@@ -8,16 +8,40 @@
 python3 -m http.server 4173 --bind 0.0.0.0
 ```
 
-ブラウザで以下を開いて確認します。
-
 - http://127.0.0.1:4173/index.html
 
-## 変更方針
+## 編集ガイド（どこを直せば何が変わるか）
 
-- 参考サイトは情報設計の粒度のみ参照し、文言・UIはオリジナルで作成。
-- アクセシビリティ（見出し階層・フォーカス可視・FAQのaria）を担保。
-- モバイル/PCのレスポンシブに対応。
+- ファーストビュー/文言: `index.html` の hero セクション
+- 問い合わせフォーム項目: `index.html` の `#contactForm`
+- FAQ項目: `index.html` の `#faq`
+- 色・余白・ボタン: `style.css` の `:root` 変数
+- OGP画像: `assets/ogp-shrine-consulting.svg`
+- favicon: `assets/favicon.svg`
 
-## デプロイ
+## 問い合わせフォーム仕様
 
-- 静的ファイルのみのため、Vercel / GitHub Pages でそのまま公開可能です。
+- 現在は静的運用優先で、ブラウザ内完結（LocalStorage保存）です。
+- スパム対策として honeypot (`name="website"`) を実装しています。
+- 本番で外部送信に切り替える場合は、`index.html` の `contactForm` submit 処理を Formspree/Getform の POST に置換してください。
+
+## 計測イベント
+
+`window.dataLayer` へ以下を push します（未設定時は console 出力のみ）。
+
+- `cta_click`（ヘッダー/ヒーロー/フローティング/送信ボタン）
+- `form_submit_complete`
+- `scroll_depth`（50%, 75%）
+
+## 公開前チェックリスト
+
+- [ ] canonical / og:url が本番URLに解決される
+- [ ] OGP画像が表示される
+- [ ] フォーム入力→送信完了メッセージまで確認
+- [ ] FAQ開閉とモバイルメニューを確認
+- [ ] ダミー文字列（example.com 等）が無い
+- [ ] 主要CTAクリックが計測される
+
+## リポジトリ構成メモ
+
+- 旧ゲーム関連ファイルは `legacy/` に隔離済みです。
