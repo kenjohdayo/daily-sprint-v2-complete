@@ -117,6 +117,18 @@
       </div>
     </section>
 
+
+    <section id="results" class="section">
+      <div class="container">
+        <h2>改善実感のある支援結果（守秘ベース）</h2>
+        <div class="grid-3">
+          <article class="card"><h3>意思決定の停滞を圧縮</h3><p>定例会議の目的と判断基準を再設計し、会議あたりの未決事項を段階的に減少。</p></article>
+          <article class="card"><h3>運用負荷の平準化</h3><p>役割分担と手順テンプレートを整備し、担当者依存の偏りを低減。</p></article>
+          <article class="card"><h3>改善サイクルの定着</h3><p>KPIレビューの論点を固定化し、改善提案から実行までの速度を向上。</p></article>
+        </div>
+      </div>
+    </section>
+
     <section id="issues" class="section">
       <div class="container">
         <h2>よくある滞りと、整え方</h2>
@@ -174,6 +186,15 @@
           <article class="card"><h3>横断プロジェクト支援</h3><p>複数部門の推進設計と定着化。</p><p class="price">目安: 個別見積</p></article>
         </div>
       </div>
+            <div class="pricing-note card">
+          <h3>費用を透明化するための約束</h3>
+          <ul>
+            <li>初回提案時に「対象範囲・頻度・期間」の内訳を明示</li>
+            <li>見積後の追加費用は、双方合意なしで発生させません</li>
+            <li>初月で継続価値が見えない場合は、契約見直しの相談を優先</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section id="profile" class="section">
@@ -215,7 +236,7 @@
       <div class="container cta-box">
         <h2>ご祈願相談フォーム</h2>
         <p>ブラウザ内で送信完了まで実行できます。必要項目をご入力ください。</p>
-        <form id="contactForm" class="contact-form" novalidate>
+        <form id="contactForm" class="contact-form" novalidate data-endpoint="">
           <div class="grid-2 form-grid">
             <label>会社名
               <input type="text" name="company" required autocomplete="organization" />
@@ -237,14 +258,15 @@
             </label>
           </div>
           <label>課題の状況
-            <textarea name="situation" rows="5" required></textarea>
+            <textarea name="situation" rows="5" required maxlength="1200" placeholder="現状の困りごと・いつまでに整えたいかをご記入ください"></textarea>
+            <small class="hint">1200文字まで。箇条書きでも大丈夫です。</small>
           </label>
           <label class="honeypot" aria-hidden="true">Webサイト
             <input type="text" name="website" tabindex="-1" autocomplete="off" />
           </label>
           <label class="agree">
             <input type="checkbox" name="agree" required />
-            個人情報の取扱いに同意します
+            個人情報の取扱いに同意します（本フォーム送信のため）
           </label>
           <button type="submit" id="submitBtn" class="btn cta-track" data-cta="form-submit">送信する</button>
           <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
@@ -341,6 +363,16 @@
     const submitBtn = document.getElementById('submitBtn');
     const formMessage = document.getElementById('formMessage');
 
+    const requiredFields = form.querySelectorAll('[required]');
+    requiredFields.forEach((field) => {
+      field.addEventListener('invalid', () => {
+        field.setAttribute('aria-invalid', 'true');
+      });
+      field.addEventListener('input', () => {
+        field.removeAttribute('aria-invalid');
+      });
+    });
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       formMessage.textContent = '';
@@ -360,23 +392,47 @@
       submitBtn.disabled = true;
       submitBtn.textContent = '送信中...';
 
-      await new Promise((r) => setTimeout(r, 800));
-      const inbox = JSON.parse(localStorage.getItem('contactInbox') || '[]');
-      inbox.push({
-        company: data.company,
-        name: data.name,
-        email: data.email,
-        topic: data.topic,
-        situation: data.situation,
-        at: new Date().toISOString()
-      });
-      localStorage.setItem('contactInbox', JSON.stringify(inbox));
+      const endpoint = form.dataset.endpoint && form.dataset.endpoint.trim();
 
-      form.reset();
-      formMessage.textContent = '受付完了しました。担当より2営業日以内を目安にご連絡します。';
-      submitBtn.disabled = false;
-      submitBtn.textContent = '送信する';
-      trackEvent('form_submit_complete', { method: 'browser_storage' });
+      try {
+        if (endpoint) {
+          const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              company: data.company,
+              name: data.name,
+              email: data.email,
+              topic: data.topic,
+              situation: data.situation,
+              at: new Date().toISOString()
+            })
+          });
+          if (!response.ok) throw new Error('endpoint failed');
+          trackEvent('form_submit_complete', { method: 'external_endpoint' });
+        } else {
+          await new Promise((r) => setTimeout(r, 800));
+          const inbox = JSON.parse(localStorage.getItem('contactInbox') || '[]');
+          inbox.push({
+            company: data.company,
+            name: data.name,
+            email: data.email,
+            topic: data.topic,
+            situation: data.situation,
+            at: new Date().toISOString()
+          });
+          localStorage.setItem('contactInbox', JSON.stringify(inbox));
+          trackEvent('form_submit_complete', { method: 'browser_storage' });
+        }
+
+        form.reset();
+        formMessage.textContent = '受付完了しました。担当より2営業日以内を目安にご連絡します。';
+      } catch (err) {
+        formMessage.textContent = '送信に失敗しました。時間をおいて再度お試しください。';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '送信する';
+      }
     });
   </script>
 </body>

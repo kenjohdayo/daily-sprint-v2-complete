@@ -269,3 +269,27 @@ input:invalid, textarea:invalid, select:invalid { border-color: #8f2f2f; }
   .cta-box { padding: 24px; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
 }
+
+
+.pricing-note {
+  margin-top: 16px;
+  background: #fffdf8;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #f5e8d9;
+}
+
+[aria-invalid="true"] {
+  border-color: #ffb4b4 !important;
+  box-shadow: 0 0 0 2px rgba(255, 180, 180, 0.3);
+}
+
+@media (max-width: 760px) {
+  .floating-cta {
+    left: 16px;
+    right: 16px;
+    text-align: center;
+  }
+}
