@@ -1,0 +1,9 @@
+# Raw thread transcripts (private)
+memory/threads_raw/
+
+# Common private environment files
+.env
+.env.*
+*.local
+*.secret
+*.secrets
